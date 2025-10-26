@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{% block title %}Bachata Music — социальная сеть танца{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="layout-body">
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo-circle">BM</div>
+    <div class="brand-block">
+      <div class="brand-name">Bachata Music</div>
+      <div class="brand-sub">социальная сеть танца</div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" placeholder="Поиск">
+    </div>
+  </div>
+  <div class="topbar-right">
+    <button class="icon-btn" title="Уведомления">🔔</button>
+    <button class="icon-btn" title="Сообщения" onclick="location.href='{{ url_for('messages') }}'">💬</button>
+    <div class="me-chip" onclick="location.href='{{ url_for('profile') }}'">
+      <div class="me-avatar">DD</div>
+      <div class="me-name">Я</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <aside class="sidebar">
+    <nav class="side-nav">
+      <a class="side-link {% if active_page=='feed' %}active{% endif %}" href="{{ url_for('feed') }}">🏠 Лента</a>
+      <a class="side-link {% if active_page=='music' %}active{% endif %}" href="{{ url_for('music') }}">🎧 Музыка</a>
+      <a class="side-link {% if active_page=='messages' %}active{% endif %}" href="{{ url_for('messages') }}">💬 Сообщения</a>
+      <a class="side-link {% if active_page=='groups' %}active{% endif %}" href="{{ url_for('groups') }}">👥 Сообщества</a>
+      <a class="side-link {% if active_page=='profile' %}active{% endif %}" href="{{ url_for('profile') }}">👤 Профиль</a>
+    </nav>
+  </aside>
+
+  <main class="main-col">{% block content %}{% endblock %}</main>
+</div>
+
+<footer class="mobile-tabbar">
+  <a class="tab-btn {% if active_page=='feed' %}on{% endif %}" href="{{ url_for('feed') }}">🏠<span>Лента</span></a>
+  <a class="tab-btn {% if active_page=='music' %}on{% endif %}" href="{{ url_for('music') }}">🎧<span>Музыка</span></a>
+  <a class="tab-btn {% if active_page=='messages' %}on{% endif %}" href="{{ url_for('messages') }}">💬<span>Чаты</span></a>
+  <a class="tab-btn {% if active_page=='groups' %}on{% endif %}" href="{{ url_for('groups') }}">👥<span>Группы</span></a>
+  <a class="tab-btn {% if active_page=='profile' %}on{% endif %}" href="{{ url_for('profile') }}">👤<span>Я</span></a>
+</footer>
+</body>
+</html>

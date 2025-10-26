@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Лента — Bachata Music{% endblock %}
+{% block content %}
+<section class="block-card">
+  <div class="block-head">
+    <div class="block-title">Истории</div>
+    <div class="stories-row">
+      <div class="story-bubble">
+        <div class="story-ring add"><div class="story-inner">+</div></div>
+        <div class="story-name">Твоя история</div>
+      </div>
+      <div class="story-bubble">
+        <div class="story-ring live"><div class="story-inner">BM</div></div>
+        <div class="story-name">Bachata Night</div>
+      </div>
+      <div class="story-bubble">
+        <div class="story-ring live"><div class="story-inner">DJ</div></div>
+        <div class="story-name">DJ Set 🔥</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block-card">
+  <div class="block-head"><div class="block-title">Сейчас происходит</div></div>
+  <div class="feed-list">
+    <div class="feed-item">
+      <div class="feed-emoji">🎉</div>
+      <div class="feed-main">
+        <div class="feed-line"><b>Соцданс сегодня в 21:00</b> · Bachata Hall</div>
+        <button class="btn-primary" onclick="alert('Записал тебя 👌')">Я пойду</button>
+      </div>
+    </div>
+    <div class="feed-item">
+      <div class="feed-emoji">🎧</div>
+      <div class="feed-main">
+        <div class="feed-line">Новый сет: <b>“Bachata Night Vol.7”</b></div>
+        <button class="btn-primary" onclick="location.href='{{ url_for('music') }}'">Слушать</button>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

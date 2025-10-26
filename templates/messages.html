@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Сообщения — Bachata Music{% endblock %}
+{% block content %}
+<section class="block-card">
+  <div class="block-head">
+    <div class="block-title">Сообщения</div>
+    <div class="block-sub">Личные и групповые чаты.</div>
+  </div>
+
+  <div class="messages-wrap">
+    <div class="dialogs-list">
+      <div class="dialog-item active">
+        <div class="avatar-circle online">DN</div>
+        <div class="dialog-main">
+          <div class="dialog-top">
+            <span class="dialog-name">Dancer N.</span>
+            <span class="dialog-time">22:10</span>
+          </div>
+          <div class="dialog-last">Ты идёшь сегодня на соцданс?</div>
+        </div>
+      </div>
+
+      <div class="dialog-item">
+        <div class="avatar-circle">BM</div>
+        <div class="dialog-main">
+          <div class="dialog-top">
+            <span class="dialog-name">Bachata Night Chat</span>
+            <span class="dialog-time">21:02</span>
+          </div>
+          <div class="dialog-last">Фотки уже в альбоме 🔥</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-area">
+      <div class="chat-header">
+        <div class="avatar-circle online small">DN</div>
+        <div>
+          <div class="chat-name">Dancer N.</div>
+          <div class="chat-status">в сети</div>
+        </div>
+      </div>
+
+      <div class="chat-messages">
+        <div class="msg msg-them">Завтра будешь на мастер-классе?</div>
+        <div class="msg msg-me">Да, и сегодня на соцданс приду 🔥</div>
+      </div>
+
+      <div class="chat-input-row">
+        <input class="chat-input" placeholder="Написать сообщение..." />
+        <button class="btn-primary">Отправить</button>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

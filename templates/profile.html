@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Профиль — Bachata Music{% endblock %}
+{% block content %}
+<section class="block-card">
+  <div class="profile-top">
+    <div class="avatar-big online">{{ user.avatar_initials }}</div>
+    <div class="profile-main">
+      <div class="profile-name">{{ user.name }}</div>
+      <div class="profile-status">{{ user.status }}</div>
+      <div class="profile-bio">{{ user.bio }}</div>
+      <div class="profile-city">📍 {{ user.city }}</div>
+      <button class="btn-primary profile-btn">Редактировать профиль</button>
+    </div>
+  </div>
+
+  <div class="profile-stories-title">Истории</div>
+  <div class="stories-row">
+    <div class="story-bubble">
+      <div class="story-ring add"><div class="story-inner">+</div></div>
+      <div class="story-name">Добавить</div>
+    </div>
+    <div class="story-bubble">
+      <div class="story-ring live"><div class="story-inner">BM</div></div>
+      <div class="story-name">Bachata Night</div>
+    </div>
+    <div class="story-bubble">
+      <div class="story-ring live"><div class="story-inner">DJ</div></div>
+      <div class="story-name">DJ Set 🔥</div>
+    </div>
+  </div>
+
+  <div class="grid-2 top-gap">
+    <div class="mini-card">
+      <div class="mini-icon">🖼️</div>
+      <div class="mini-body">
+        <div class="mini-title">Фото / Видео</div>
+        <div class="mini-desc">Клипы с соцдансов и тренировок.</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">📅</div>
+      <div class="mini-body">
+        <div class="mini-title">События</div>
+        <div class="mini-desc">Где ты выступаешь и танцуешь.</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
